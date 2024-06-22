@@ -2,6 +2,8 @@ public class Dog{
     private String name;
     private String breed; //breed = raza;
 
+    public Dog(){
+    }
     public Dog(String name, String breed){
         this.name = name;
         this.breed = breed;
@@ -16,10 +18,10 @@ public class Dog{
     public String getInfo(){
         return "Name: " + getName() + ", breed: " + getBreed();
     }
-    public void putName(String name){
+    public void setName(String name){
         this.name = name;
     }
-    public void putBreed(String breed){
+    public void setBreed(String breed){
         this.breed = breed;
     }
 }
