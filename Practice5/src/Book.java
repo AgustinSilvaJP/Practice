@@ -7,10 +7,21 @@ public class Book {
     private static ArrayList<Book> books = new ArrayList<Book>();
 
     //constructor
+    public Book(){}
     public Book(String tittle, String author, int isbn){
         this.tittle = tittle;
         this.author = author;
         this.isbn = isbn;
+    }
+    //methods
+    public void addBook(Book book){
+        books.add(book);
+    }
+    public void removeBook(Book book){
+        books.remove(book);
+    }
+    public static ArrayList<Book> getBooks(){
+        return books;
     }
     //setters
     public void setTitle(String tittle){
@@ -22,9 +33,6 @@ public class Book {
     public void setIsbn(int isbn){
         this.isbn = isbn;
     }
-    public void addBook(Book book){
-        books.add(book);
-    }
     //getters
     public String getTittle(){
         return tittle;
@@ -35,7 +43,5 @@ public class Book {
     public int getIsbn(){
         return isbn;
     }
-    public ArrayList<Book> getBooks(){
-        return books;
-    }
+
 }
