@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Main {
-    public static boolean isPositive(double num){
-        return num >= 0;
-    }
     public static void errorMessage(){
         System.out.println("ERROR\nNumero fuera de rango, ingrese otro valor: ");
     }
@@ -20,7 +17,7 @@ public class Main {
         ArrayList<Account> accounts = bank.getAccounts();
         int num;
 
-        for(Account account : accounts){
+        for(Account account : accounts){//ini for principal
             System.out.println(account.printInfo());
             System.out.println("------------------------------------------");
             System.out.print("Do you want to do anything with the account? (1, 0): ");
@@ -30,6 +27,7 @@ public class Main {
                     errorMessage();
                 }
             }while(num < 0 || num  > 1);
+
             if(num == 1){
                 System.out.print("Do you want to deposit or withdraw? (1, 0): ");
                 do{
@@ -38,6 +36,7 @@ public class Main {
                         errorMessage();
                     }
                 }while(num > 1 || num < 0);
+
                 if(num == 1){
                     System.out.print("Type amount: ");
                     account.deposit(xd.nextDouble());
@@ -47,8 +46,7 @@ public class Main {
                 }
                 System.out.println("New balance: " + account.getMoney());
                 System.out.println("------------------------------------------");
-
             }
-        }
+        }//fin for principal
     }
 }
